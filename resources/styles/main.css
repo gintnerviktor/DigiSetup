@@ -9,6 +9,35 @@ aside{
     padding-left: 0px;
 }
 
+/*Az eredeti magasság 768px, de ebből lejön 22px ami az ablak keret vastagsága OSX-en.*/
+.test {
+    position: fixed;
+    top: 50px;
+    height: 696px;          /* 768 - 22 - 50 = 696px */
+    overflow: auto;
+    font-size: 28px;
+}
+
+.mag {
+    min-height: 696px;
+}
+
+#function_selector_div{
+    margin-top: 10px;
+}
+
+#section11 {color: #fff; background-color: #1E88E5;}
+#section12 {color: #fff; background-color: #1E88E5;}
+#section21 {color: #fff; background-color: #673ab7;}
+#section22 {color: #fff; background-color: #673ab7;}
+#section23 {color: #fff; background-color: #673ab7;}
+#section24 {color: #fff; background-color: #673ab7;}
+#section25 {color: #fff; background-color: #673ab7;}
+#section26 {color: #fff; background-color: #673ab7;}
+#section3 {color: #fff; background-color: #ff9800;}
+#section41 {color: #fff; background-color: #00bcd4;}
+#section42 {color: #fff; background-color: #009688;}
+
 
 .onoffswitch {
     position: relative; width: 89px;

@@ -13,7 +13,7 @@ chrome.app.runtime.onLaunched.addListener(function() {
   
   console.log (screenWidth + ',' + screenHeight );
 
-  chrome.app.window.create('login.html', {
+  chrome.app.window.create('proba.html', {
     id: "DigiSetup",
     resizable: true,
     outerBounds: {
@@ -23,6 +23,4 @@ chrome.app.runtime.onLaunched.addListener(function() {
       top: Math.round((screenHeight-height)/2)
     }
   });
-  
-  
 });
