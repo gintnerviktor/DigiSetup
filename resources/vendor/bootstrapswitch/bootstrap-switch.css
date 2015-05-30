@@ -64,6 +64,23 @@
   text-align: center;
   z-index: 1;
 }
+
+/*Szín definíciók :*/
+
+/* test állapot színe */
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-test,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-test {
+    color: #fff;
+    background: #62cb31;
+}
+
+/* profil állapot színe */
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-profil,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-profil {
+    color: #fff;
+    background: #c0392b;
+}
+
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary,
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary {
   color: #fff;

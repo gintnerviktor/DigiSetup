@@ -9,24 +9,21 @@ $(document).ready(function () {
         $("body").empty();
         $("body").append(buildBody());
 
-        $('#function_selector').bootstrapSwitch();
-        $('#function_selector').bootstrapSwitch('size','small');
-        $('#function_selector').bootstrapSwitch('onText', 'Profil');
-        $('#function_selector').bootstrapSwitch('offText', 'Teszt');
-        $('#function_selector').bootstrapSwitch('onColor', 'info');
-        $('#function_selector').bootstrapSwitch('offColor','warning');
-
         $("body").append(biuldContent());
-        //$("#mainContainer").append(headerText);
-        //$("body").append(menuText);
-        // $("#mainContainer").append(gorditosav());
+
+        $("body").append(menuText);
+
+        var width = $("body").width();
+        console.log("width:" + width);
+
+        $("#piecontent").width((width-180) + 'px');
+
+
 
         // A logutButton-hoz rendeljük a kilépés funkciót.
         /*$("#logoutButton").on('click', function(){
             buildLogin();
         });
-
-        homer();
 */
     }
 
@@ -43,151 +40,134 @@ $(document).ready(function () {
 
     function buildBody(){
         return ''+
-            '<nav class="navbar navbar-inverse navbar-fixed-top">'+
-                '<div class="container-fluid">'+
-                    '<div class="navbar-header">'+
-                        /*'<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">'+
-                        '</button>'+*/
-                        '<a class="navbar-brand" href="#">DIGIsetup V.1.0.</a>'+
+            '<div class="color-line"></div>'+
+            '<div class="main-line">' +
+                '<nav class="navbar navbar-fixed-top">'+
+                    '<div class="container-fluid">'+
+                        '<div class="navbar-header">'+
+                            '<a class="navbar-brand text-center" href="#" id="logo">DIGIsetup V.1.0.</a>'+
+                        '</div>'+
+
+                        '<div class="collapse navbar-collapse navbar-left" id="myNavbar2">'+
+                            '<ul class="nav nav-pills">'+
+                                '<li class="active">' +
+                                    '<a href="#section11">Eszköz tesztelése</a>' +
+                                '</li>'+
+                                '<li>' +
+                                    '<a href="#section22">Profil szerkesztése</a>' +
+                                '</li>'+
+                                '<li>' +
+                                    '<a href="#section23">Firmware kezelése</a>' +
+                                '</li>'+
+                                '<li>' +
+                                    '<a href="#section24">Dokumentáció</a>' +
+                                '</li>'+
+                            '</ul>'+
+                        '</div>'+
                     '</div>'+
-
-                    '<div class="collapse navbar-collapse navbar-left" id="myNavbar">'+
-
-                        '<ul class="nav navbar-nav">'+
-
-                            // GSM beállítások fejezet
-                            '<li class="dropdown">' +
-                                '<a class="dropdown-toggle" data-toggle="dropdown" href="#">GSM beállítások ' +
-                                    '<span class="caret"></span>' +
-                                '</a>'+
-                                '<ul class="dropdown-menu">'+
-                                    '<li>' +
-                                        '<a href="#section11">GPRS beállítások</a>' +
-                                    '</li>'+
-                                    '<li>' +
-                                        '<a href="#section12">Távoli frissítés</a>' +
-                                    '</li>'+
-                                '</ul>'+
-                            '</li>'+
-
-                                // Gépjármű védelem fejezet
-                            '<li class="dropdown">' +
-                                '<a class="dropdown-toggle" data-toggle="dropdown" href="#">Gépjármű védelem ' +
-                                    '<span class="caret"></span>' +
-                                '</a>'+
-                                '<ul class="dropdown-menu">'+
-                                    '<li>' +
-                                        '<a href="#section21">Autóriasztó funkció</a>' +
-                                    '</li>'+
-                                    '<li>' +
-                                        '<a href="#section22">Vezérlő funkció</a>' +
-                                    '</li>'+
-                                    '<li>' +
-                                        '<a href="#section23">Indításgátló funkció</a>' +
-                                    '</li>'+
-                                    '<li>' +
-                                        '<a href="#section24">SMS értesítések</a>' +
-                                    '</li>'+
-                                    '<li>' +
-                                        '<a href="#section25">SMS szövegek</a>' +
-                                    '</li>'+
-                                    '<li>' +
-                                        '<a href="#section26">Dallas kulcsok</a>' +
-                                    '</li>'+
-                                '</ul>'+
-                            '</li>'+
-
-                                // Egyéb beállítások fejezet
-                            '<li class="dropdown">' +
-                                '<a class="dropdown-toggle" data-toggle="dropdown" href="#">Egyéb beállítások ' +
-                                    '<span class="caret"></span>' +
-                                '</a>'+
-                                '<ul class="dropdown-menu">'+
-                                    '<li>' +
-                                        '<a href="#section31">Bementek beállítása</a>' +
-                                    '</li>'+
-                                    '<li>' +
-                                        '<a href="#section32">Pozíció rögzítése</a>' +
-                                    '</li>'+
-                                    '<li>' +
-                                        '<a href="#section33">Egyéb értékek</a>' +
-                                    '</li>'+
-                                    '<li>' +
-                                        '<a href="#section34">Adatok rögzítése</a>' +
-                                    '</li>'+
-                                    '<li>' +
-                                        '<a href="#section35">Érzékelők</a>' +
-                                    '</li>'+
-                                '</ul>'+
-                            '</li>'+
-                        '</ul>'+
-                    '</div>'+
-                    '<div class="navbar-right">'+
-
-                        '<ul class="nav navbar-nav">'+
-                            '<li>'+
-                                '<div id="function_selector_div">'+
-                                    '<input type="checkbox" name="function_selector" id="function_selector">'+
-                                '</div>'+
-                            '</li>'+
-                            '<li class="dropdown">'+
-                                '<a id="logoutButton" title="kilépés">'+
-                                    '<i class="pe-7s-upload pe-rotate-90"></i>'+
-                'hmmm'+
-                                '</a>'+
-                            '</li>'+
-                        '</ul>'+
-                    '</div>'+
-                '</div>'+
-            '</nav>';
+                '</nav>'+
+            '</div>';
     }
+
 
     function biuldContent(){
         return ''+
-            '<div data-spy="scroll" data-target=".navbar" data-offset="20" class="test">'+
+            '<div data-spy="scroll" data-target="#navigation2" data-offset="20" class="test" id="piecontent">'+
                 '<div id="section11" class="mag">'+
                     '<div class="container-fluid">'+
-                        '<h2>GSM beállítások / GPRS beállítások</h2>'+
+                        '<div class="page-header">'+
+                            '<h3>GPRS beállítások</h3>'+
+                                '<div class="row">'+
+                                '</div>'+
+                        '</div>'+
                     '</div>'+
                 '</div>'+
                 '<div id="section12" class="mag">'+
                     '<div class="container-fluid">'+
-                        '<h1>GSM beállítások / Távoli frissítés</h1>'+
+                        '<div class="page-header">'+
+                            '<h3>Távoli frissítés</h3>'+
+                        '</div>'+
                     '</div>'+
                 '</div>'+
                 '<div id="section21" class="mag">'+
                     '<div class="container-fluid">'+
-                        '<h1>Section 3</h1>'+
-
+                        '<div class="page-header">'+
+                            '<h3>Autóriasztó funkció</h3>'+
+                        '</div>'+
                     '</div>'+
                 '</div>'+
                 '<div id="section22" class="mag">'+
                     '<div class="container-fluid">'+
-                        '<h1>Section 4 Submenu 1</h1>'+
-                        '<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>'+
-                        '<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>'+
+                        '<div class="page-header">'+
+                            '<h3>Vezérlő funkció</h3>'+
+                        '</div>'+
                     '</div>'+
                 '</div>'+
                 '<div id="section23" class="mag">'+
                     '<div class="container-fluid">'+
-                        '<h1>Section 4 Submenu 2</h1>'+
-                        '<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>'+
-                        '<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>'+
+                        '<div class="page-header">'+
+                            '<h3>Indításgátló funkció</h3>'+
+                        '</div>'+
                     '</div>'+
                 '</div>'+
                 '<div id="section24" class="mag">'+
                     '<div class="container-fluid">'+
-                        '<h1>Section 4 Submenu 2</h1>'+
+                        '<div class="page-header">'+
+                            '<h3>SMS értesítések</h3>'+
+                        '</div>'+
                     '</div>'+
                 '</div>'+
                 '<div id="section25" class="mag">'+
                     '<div class="container-fluid">'+
-                        '<h1>Section 4 Submenu 2</h1>'+
+                        '<div class="page-header">'+
+                            '<h3>SMS szövegek</h3>'+
+                        '</div>'+
                     '</div>'+
                 '</div>'+
                 '<div id="section26" class="mag">'+
                     '<div class="container-fluid">'+
-                        '<h1>Section 4 Submenu 2</h1>'+
+                        '<div class="page-header">'+
+                            '<h3>Dallas kulcsok</h3>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+
+                // Egyéb beállítások:
+                '<div id="section31" class="mag">'+
+                    '<div class="container-fluid">'+
+                        '<div class="page-header">'+
+                            '<h3>Bemenetek beállítása</h3>'+
+                            '<div class="row">'+
+                            '</div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div id="section32" class="mag">'+
+                    '<div class="container-fluid">'+
+                        '<div class="page-header">'+
+                            '<h3>Pozíció rögzítése</h3>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div id="section33" class="mag">'+
+                    '<div class="container-fluid">'+
+                        '<div class="page-header">'+
+                            '<h3>Egyéb értékek</h3>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div id="section34" class="mag">'+
+                    '<div class="container-fluid">'+
+                        '<div class="page-header">'+
+                            '<h3>Adatok rögzítése</h3>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div id="section35" class="mag">'+
+                    '<div class="container-fluid">'+
+                        '<div class="page-header">'+
+                            '<h3>Érzékelők</h3>'+
+                        '</div>'+
                     '</div>'+
                 '</div>'+
             '</div>';
@@ -229,254 +209,77 @@ $(document).ready(function () {
             '</div>'+
         '</div>';
 
-    var headerText =
-        '<div id="header" class="animated-panel zoomIn">'+
-            '<div class="color-line">'+
-            '</div>'+
-            '<div id="logo" class="dark-version">'+
-                '<div>'+
-                    '<span>DIGIsetup</span>'+
-                '</div>'+
-        '<div class="onoffswitch">'+
-        '<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>'+
-        '<label class="onoffswitch-label" for="myonoffswitch">'+
-        '<span class="onoffswitch-inner"></span>'+
-        '<span class="onoffswitch-switch"></span>'+
-        '</label>'+
-        '</div>'+
-            '</div>'+
-            '<nav class="h-300">'+
-                /*'<div class="navbar-left">'+
-                    '<ul class="nav navbar-nav">'+
-                        '<li>'+
-                            '<div class="onoffswitch">'+
-                                '<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>'+
-                                '<label class="onoffswitch-label" for="myonoffswitch">'+
-                                    '<span class="onoffswitch-inner"></span>'+
-                                    '<span class="onoffswitch-switch"></span>'+
-                                '</label>'+
-                            '</div>'+
-                        '</li>'+
-                    '</ul>'+
-                '</div>'+*/
-
-
-                '<div class="collapse navbar-collapse navbar-left" id="myNavbar">'+
-                    '<ul class="nav navbar-nav">'+
-                        // GSM beállítások fejezet
-                        '<li class="dropdown">' +
-                            '<a class="dropdown-toggle" data-toggle="dropdown" href="#">GSM beállítások ' +
-                                '<span class="caret"></span>' +
-                            '</a>'+
-                            '<ul class="dropdown-menu">'+
-                                '<li>' +
-                                    '<a href="#section11">GPRS beállítások</a>' +
-                                '</li>'+
-                                '<li>' +
-                                    '<a href="#section12">Távoli frissítés</a>' +
-                                '</li>'+
-                            '</ul>'+
-                        '</li>'+
-
-                        // Gépjármű védelem fejezet
-                        '<li class="dropdown">' +
-                                '<a class="dropdown-toggle" data-toggle="dropdown" href="#">Gépjármű védelem ' +
-                                    '<span class="caret"></span>' +
-                                '</a>'+
-                            '<ul class="dropdown-menu">'+
-                                '<li>' +
-                                    '<a href="#section21">Autóriasztó funkció</a>' +
-                                '</li>'+
-                                '<li>' +
-                                    '<a href="#section22">Vezérlő funkció</a>' +
-                                '</li>'+
-                                '<li>' +
-                                    '<a href="#section23">Indításgátló funkció</a>' +
-                                '</li>'+
-                                '<li>' +
-                                    '<a href="#section24">SMS értesítések</a>' +
-                                '</li>'+
-                                '<li>' +
-                                    '<a href="#section25">SMS szövegek</a>' +
-                                '</li>'+
-                                '<li>' +
-                                    '<a href="#section26">Dallas kulcsok</a>' +
-                                '</li>'+
-                            '</ul>'+
-                        '</li>'+
-
-                        // Egyéb beállítások fejezet
-                        '<li class="dropdown">' +
-                            '<a class="dropdown-toggle" data-toggle="dropdown" href="#">Egyéb beállítások ' +
-                                '<span class="caret"></span>' +
-                            '</a>'+
-                            '<ul class="dropdown-menu">'+
-                                '<li>' +
-                                    '<a href="#section31">Bementek beállítása</a>' +
-                                '</li>'+
-                                '<li>' +
-                                    '<a href="#section32">Pozíció rögzítése</a>' +
-                                '</li>'+
-                                '<li>' +
-                                    '<a href="#section33">Egyéb értékek</a>' +
-                                '</li>'+
-                                '<li>' +
-                                    '<a href="#section34">Adatok rögzítése</a>' +
-                                '</li>'+
-                                '<li>' +
-                                    '<a href="#section35">Érzékelők</a>' +
-                                '</li>'+
-                            '</ul>'+
-                        '</li>'+
-                    '</ul>'+
-                '</div>'+
-
-
-                '<div class="navbar-right">'+
-                    '<ul class="nav navbar-nav">'+
-                        '<li class="dropdown">'+
-                            '<a id="logoutButton" title="kilépés">'+
-                                '<i class="pe-7s-upload pe-rotate-90"></i>'+
-                            '</a>'+
-                        '</li>'+
-                    '</ul>'+
-                '</div>'+
-            '</nav>'+
-        '</div>'+
-        '<div>'+
-        '<div data-spy="scroll" data-target=".navbar" data-offset="10" class="test">'+
-            '<div id="section11">'+
-            '<div class="container-fluid">'+
-            '<h1>Section 1</h1>'+
-            '<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>'+
-            '<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>'+
-            '</div>'+
-            '</div>'+
-            '<div id="section12">'+
-            '<div class="container-fluid">'+
-            '<h1>Section 2</h1>'+
-            '<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>'+
-            '<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>'+
-            '</div>'+
-            '</div>'+
-            '<div id="section21">'+
-            '<div class="container-fluid">'+
-            '<h1>Section 3</h1>'+
-            '<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>'+
-            '<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>'+
-            '</div>'+
-            '</div>'+
-            '<div id="section22">'+
-            '<div class="container-fluid">'+
-            '<h1>Section 4 Submenu 1</h1>'+
-            '<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>'+
-            '<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>'+
-            '</div>'+
-            '</div>'+
-            '<div id="section23">'+
-            '<div class="container-fluid">'+
-            '<h1>Section 4 Submenu 2</h1>'+
-            '<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>'+
-            '<p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>'+
-            '</div>'+
-            '</div>'+
-        '</div>'+
-        '</div>';
-
     var menuText =
     '<aside id="menu">'+
         '<div id="navigation">'+
+            '<nav id="navigation2">'+
                 '<ul class="nav" id="side-menu">'+
                     '<li>'+
                         '<a>'+
-                            '<span class="nav-label">GSM<br>beállítások</span>'+
-                            '<span class="fa arrow"></span>'+
+                            '<i class="fa fa-camera-retro bcolor-purple"></i>'+
+                            '<span class="nav-label"> GSM beállítások</span>'+
                         '</a>'+
-                        '<ul class="nav nav-second-level">'+
+                        '<ul class="nav">'+
                             '<li>'+
-                                '<a href="#">GPRS beállítások</a>'+
+                                '<a href="#section11">GPRS beállítások</a>'+
                             '</li>'+
                             '<li>'+
-                                '<a href="#">Távoli frissítés</a>'+
+                                '<a href="#section12">Távoli frissítés</a>'+
                             '</li>'+
                         '</ul>'+
                     '</li>'+
                     '<li>'+
                         '<a>'+
-                            '<span class="nav-label">Gépjármű<br>védelem</span>'+
-                            '<span class="fa arrow"></span>'+
+                            '<i class="fa fa-camera-retro bcolor-blue"></i>'+
+                            '<span class="nav-label"> Gépjármű védelem</span>'+
                         '</a>'+
-                        '<ul class="nav nav-second-level">'+
+                        '<ul class="nav">'+
                             '<li>'+
-                                '<a>Autóriasztó funkció</a>'+
+                                '<a href="#section21">Autóriasztó funkció</a>'+
                             '</li>'+
                             '<li>'+
-                                '<a>Vezérlő funkció</a>'+
+                                '<a href="#section22">Vezérlő funkció</a>'+
                             '</li>'+
                             '<li>'+
-                                '<a>Indításgátló funkció</a>'+
+                                '<a href="#section23">Indításgátló funkció</a>'+
                             '</li>'+
                             '<li>'+
-                                '<a>SMS értesítések</a>'+
+                                '<a href="#section24">SMS értesítések</a>'+
                             '</li>'+
                             '<li>'+
-                                '<a>SMS szövegek</a>'+
+                                '<a href="#section25">SMS szövegek</a>'+
                             '</li>'+
                             '<li>'+
-                                '<a>Dallas kulcsok</a>'+
+                                '<a href="#section26">Dallas kulcsok</a>'+
                             '</li>'+
                         '</ul>'+
                     '</li>'+
                     '<li>'+
                         '<a>'+
-                            '<span class="nav-label">Egyéb<br>beállítások</span>'+
-                            '<span class="fa arrow"></span>'+
+                            '<i class="fa fa-camera-retro bcolor-yellow"></i>'+
+                            '<span class="nav-label"> Egyéb beállítások</span>'+
                         '</a>'+
-                        '<ul class="nav nav-second-level">'+
+                        '<ul class="nav">'+
                             '<li>'+
-                                '<a>Bementek beállítása</a>'+
+                                '<a href="#section31">Bementek beállítása</a>'+
                             '</li>'+
                             '<li>'+
-                                '<a>Pozíció rögzítése</a>'+
+                                '<a href="#section32">Pozíció rögzítése</a>'+
                             '</li>'+
                             '<li>'+
-                                '<a>Egyéb értékek</a>'+
+                                '<a href="#section33">Egyéb értékek</a>'+
                             '</li>'+
                             '<li>'+
-                                '<a>Adatok rögzítése</a>'+
+                                '<a href="#section34">Adatok rögzítése</a>'+
                             '</li>'+
                             '<li>'+
-                                '<a>Érzékelők</a>'+
-                            '</li>'+
-                        '</ul>'+
-                    '</li>'+
-                    '<li>'+
-                        '<a>'+
-                            '<span class="nav-label">Firmware<br>kezelés</span>'+
-                            '<span class="fa arrow"></span>'+
-                        '</a>'+
-                        '<ul class="nav nav-second-level">'+
-                            '<li>'+
-                                '<a>Firmware letöltése</a>'+
-                            '</li>'+
-                        '</ul>'+
-                    '</li>'+
-                    '<li>'+
-                        '<a>'+
-                            '<span class="nav-label">Eszköz<br>tesztelés</span>'+
-                            '<span class="fa arrow"></span>'+
-                        '</a>'+
-                        '<ul class="nav nav-second-level">'+
-                            '<li>'+
-                                '<a>Bemenetek tesztelése</a>'+
-                            '</li>'+
-                            '<li>'+
-                                '<a>Valami...</a>'+
+                                '<a href="#section35">Érzékelők</a>'+
                             '</li>'+
                         '</ul>'+
                     '</li>'+
                 '</ul>'+
-        '</div>'+
+            '</nav>'+
+    '</div>'+
     '</aside>';
 
 
