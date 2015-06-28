@@ -1,6 +1,6 @@
 
 body{
-    background-color: #edf0f5;
+    background-color: #EDEDED;
 }
 aside{
     overflow-y: scroll;
@@ -19,7 +19,7 @@ aside{
     top: 56px;
     height: 690px;          /* 768 - 22 - 50 - 6 = 690px */
     overflow: auto;
-    font-size: 28px;
+    /*font-size: 28px;*/
     width: 100%;
 }
 
@@ -34,20 +34,34 @@ aside{
     color: #fff;
 }
 
+.section1x {
+    border-left: 10px solid #9b59b6;
+    padding-left: 20px;
+}
 
-#section11 {color: #6a6c6f; background-color: #edf0f5;}
-#section12 {color: #6a6c6f; background-color: #edf0f5;}
-#section21 {color: #6a6c6f; background-color: #edf0f5;}
-#section22 {color: #6a6c6f; background-color: #edf0f5;}
-#section23 {color: #6a6c6f; background-color: #edf0f5;}
-#section24 {color: #6a6c6f; background-color: #edf0f5;}
-#section25 {color: #6a6c6f; background-color: #edf0f5;}
-#section26 {color: #6a6c6f; background-color: #edf0f5;}
-#section31 {color: #6a6c6f; background-color: #edf0f5;}
-#section32 {color: #6a6c6f; background-color: #edf0f5;}
-#section33 {color: #6a6c6f; background-color: #edf0f5;}
-#section34 {color: #6a6c6f; background-color: #edf0f5;}
-#section35 {color: #6a6c6f; background-color: #edf0f5;}
+.section2x {
+    border-left: 10px solid #3498db;
+    padding-left: 20px;
+}
+
+.section3x {
+    border-left: 10px solid #ffb606;
+    padding-left: 20px;
+}
+
+#section11 {color: #6a6c6f; background-color: #EDEDED;}
+#section12 {color: #6a6c6f; background-color: #d7d7d7;}
+#section21 {color: #6a6c6f; background-color: #EDEDED;}
+#section22 {color: #6a6c6f; background-color: #d7d7d7;}
+#section23 {color: #6a6c6f; background-color: #EDEDED;}
+#section24 {color: #6a6c6f; background-color: #d7d7d7;}
+#section25 {color: #6a6c6f; background-color: #EDEDED;}
+#section26 {color: #6a6c6f; background-color: #d7d7d7;}
+#section31 {color: #6a6c6f; background-color: #EDEDED;}
+#section32 {color: #6a6c6f; background-color: #d7d7d7;}
+#section33 {color: #6a6c6f; background-color: #EDEDED;}
+#section34 {color: #6a6c6f; background-color: #d7d7d7;}
+#section35 {color: #6a6c6f; background-color: #EDEDED;}
 
 .color-line {
     background: #f7f9fa;
@@ -66,7 +80,7 @@ aside{
 .page-header {
     padding-bottom: 9px;
     margin: 20px 0 10px;
-    border-bottom: 1px solid #9b59b6;
+    border-bottom: 1px solid #aeaeae;
 }
 
 /* Ha a PILLS-fölé húzzuk az egeret, akkor automatikusan lenyílik a dropdown menu */
@@ -119,7 +133,7 @@ ul.nav li.dropdown:hover ul.dropdown-menu{
 {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     border-radius: 10px;
-    background-color: #F5F5F5;
+    background-color: #dadada;
 }
 
 ::-webkit-scrollbar
@@ -184,6 +198,10 @@ aside .nav > li > a {
     margin-bottom: 20px;
 }
 
+#navigation2 > ul > li > a > i {
+    width: 24px;
+}
+
 .nav > li > a > i {
     background-color: #9b59b6;
     padding: 5px;
@@ -233,6 +251,46 @@ aside .nav > li > a {
 }
 .bcolor-red {
     background-color : #c0392b !important;
+}
+
+.device-panel{
+    margin-top: 5px;
+    margin-bottom: 20px;
+    color: #ABABAB;
+}
+
+.device-info-warning{
+    border-left: 8px solid #ffb606;
+    padding-left: 10px;
+}
+
+.device-info-success{
+    border-left: 8px solid #62cb31;
+    padding-left: 10px;
+}
+
+.no-horizontal-padding{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.menubuttons{
+    background-color: #EDEDED;
+    padding-left: 2px;
+    padding-right: 2px;
+    width: 32px;
+    color: #34495e;
+}
+
+.menubuttons-group{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.logobox{
+    padding-left: 5px;
+    padding-top: 0px;
+    background-color: #e67e22;
 }
 
 
